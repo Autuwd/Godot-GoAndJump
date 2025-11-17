@@ -9,10 +9,10 @@ enum State{
 }
 
 const GROUND_STATES := [State.IDLE, State.RUNNING, State.LANDING]
-const RUN_SPEED := 100.0
+const RUN_SPEED := 200.0
 const FLOOR_ACCELERATION := RUN_SPEED / 0.2
 const AIR_ACCELERATION := RUN_SPEED / 0.02
-const JUMP_VELOCITY := -250.0
+const JUMP_VELOCITY := -300.0
 
 var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as float
 var is_first_tick := false
