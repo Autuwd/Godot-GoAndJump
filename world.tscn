@@ -301,5 +301,5 @@ editor_draw_drag_margin = true
 [node name="Boar" parent="." instance=ExtResource("11_yab16")]
 position = Vector2(204, 187)
 direction = -1
-max_speed = 180.0
+max_speed = 120.0
 acceleration = 2000.0

@@ -12,7 +12,7 @@ enum Direction{
 		if not is_node_ready():
 			await ready
 		graphics.scale.x = -direction
-@export var max_speed: float = 180
+@export var max_speed: float = 120
 @export var acceleration: float = 2000
 
 var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as float
@@ -20,6 +20,7 @@ var default_gravity := ProjectSettings.get("physics/2d/default_gravity") as floa
 @onready var graphics: Node2D = $Graphics
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: StateMachine = $StateMachine
+@onready var stats: Stats = $Stats
 
 
 func move(speed: float, delta: float) -> void:
@@ -27,3 +28,7 @@ func move(speed: float, delta: float) -> void:
 	velocity.y += default_gravity * delta
 	
 	move_and_slide()
+
+
+func die() -> void:
+	queue_free()
