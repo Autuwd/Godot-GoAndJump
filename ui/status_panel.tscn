@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://svs71tc086bu"]
+
+[ext_resource type="Texture2D" uid="uid://mo5gjb3kqell" path="res://Legacy-Fantasy - High Forest 2.3/HUD/Base-01.png" id="1_42k5l"]
+[ext_resource type="Script" path="res://ui/status_panel.gd" id="1_h17ky"]
+[ext_resource type="Texture2D" uid="uid://digtmhjsqeerr" path="res://generic_char_v0.2/png/green/char_green_1.png" id="2_bdwqj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3ppqt"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+texture = ExtResource("1_42k5l")
+region_rect = Rect2(243, 155, 58, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lki8k"]
+atlas = ExtResource("2_bdwqj")
+region = Rect2(20, 21, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn8fm"]
+atlas = ExtResource("1_42k5l")
+region = Rect2(307, 21, 58, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wtk3v"]
+atlas = ExtResource("1_42k5l")
+region = Rect2(308, 118, 56, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aq0b"]
+atlas = ExtResource("1_42k5l")
+region = Rect2(308, 86, 56, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_it84v"]
+atlas = ExtResource("1_42k5l")
+region = Rect2(307, 6, 58, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fnup"]
+atlas = ExtResource("1_42k5l")
+region = Rect2(308, 135, 56, 2)
+
+[node name="StatusPanel" type="HBoxContainer"]
+script = ExtResource("1_h17ky")
+
+[node name="AvataBox" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_3ppqt")
+
+[node name="Avata" type="TextureRect" parent="AvataBox"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_lki8k")
+stretch_mode = 5
+
+[node name="V" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="HealthBar" type="TextureProgressBar" parent="V"]
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_over = SubResource("AtlasTexture_rn8fm")
+texture_progress = SubResource("AtlasTexture_wtk3v")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="EasedHealrhBar" type="TextureProgressBar" parent="V/HealthBar"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_progress = SubResource("AtlasTexture_6aq0b")
+texture_progress_offset = Vector2(1, 1)
+
+[node name="EnergyBar" type="TextureProgressBar" parent="V"]
+layout_mode = 2
+max_value = 1.0
+step = 0.0
+value = 1.0
+texture_over = SubResource("AtlasTexture_it84v")
+texture_progress = SubResource("AtlasTexture_5fnup")
+texture_progress_offset = Vector2(1, 1)
