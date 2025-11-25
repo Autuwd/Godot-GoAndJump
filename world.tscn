@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bo6h2sitp2pph"]
+[gd_scene load_steps=21 format=3 uid="uid://bo6h2sitp2pph"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_va0ss"]
 [ext_resource type="Texture2D" uid="uid://jt4uylgqvlgd" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="2_sge75"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://btdo13g80aw0e" path="res://Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="9_g5nkj"]
 [ext_resource type="Texture2D" uid="uid://b4lwaq3kldcey" path="res://Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="10_5hagy"]
 [ext_resource type="PackedScene" uid="uid://d0mr4uk6ymxk2" path="res://enemies/boar.tscn" id="11_yab16"]
+[ext_resource type="Script" path="res://classes/Interactbale.gd" id="12_kyyfx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a13bx"]
 texture = ExtResource("2_sge75")
@@ -133,6 +134,9 @@ sources/2 = SubResource("TileSetAtlasSource_brn8w")
 sources/3 = SubResource("TileSetAtlasSource_rnk06")
 sources/4 = SubResource("TileSetAtlasSource_80ihu")
 sources/5 = SubResource("TileSetAtlasSource_ghudv")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_maduy"]
+size = Vector2(19, 26)
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_va0ss")
@@ -300,3 +304,11 @@ editor_draw_drag_margin = true
 
 [node name="Boar" parent="." instance=ExtResource("11_yab16")]
 position = Vector2(204, 187)
+
+[node name="Interactable" type="Area2D" parent="."]
+position = Vector2(384, 139)
+script = ExtResource("12_kyyfx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_maduy")
