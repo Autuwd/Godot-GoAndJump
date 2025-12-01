@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://d0mr4uk6ymxk2"]
 
 [ext_resource type="PackedScene" uid="uid://cbv8oj005j2un" path="res://enemies/enemy.tscn" id="1_sv4dq"]
-[ext_resource type="Texture2D" uid="uid://tr4l3rjik4o3" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-export-Back.png" id="2_c10sb"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Idle/Idle-Sheet-export-Back.png" id="2_c10sb"]
 [ext_resource type="Script" path="res://enemies/boar.gd" id="2_gwkcm"]
-[ext_resource type="Texture2D" uid="uid://chminyt2fqqan" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet-Black.png" id="3_6131s"]
-[ext_resource type="Texture2D" uid="uid://dn6puolnkabfj" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet-Black.png" id="4_710cy"]
-[ext_resource type="Texture2D" uid="uid://d2b3h8q305y67" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-SheetBlack.png" id="5_1w753"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Hit-Vanish/Hit-Sheet-Black.png" id="3_6131s"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Run/Run-Sheet-Black.png" id="4_710cy"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Mob/Boar/Walk/Walk-Base-SheetBlack.png" id="5_1w753"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vkckc"]
 size = Vector2(22, 22)

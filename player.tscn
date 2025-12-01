@@ -2558,6 +2558,7 @@ position = Vector2(0, -14)
 shape = SubResource("RectangleShape2D_i3gnm")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+deterministic = true
 root_node = NodePath("../CollisionShape2D")
 libraries = {
 "": SubResource("AnimationLibrary_bjann")
@@ -2582,6 +2583,7 @@ one_shot = true
 script = ExtResource("3_fjyhh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 20
 
 [node name="StatusPanel" parent="CanvasLayer" instance=ExtResource("8_2jk1r")]
 offset_left = 7.0

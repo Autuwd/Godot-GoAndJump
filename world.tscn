@@ -1,18 +1,19 @@
-[gd_scene load_steps=21 format=3 uid="uid://bo6h2sitp2pph"]
+[gd_scene load_steps=22 format=3 uid="uid://bo6h2sitp2pph"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_va0ss"]
-[ext_resource type="Texture2D" uid="uid://jt4uylgqvlgd" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="2_sge75"]
-[ext_resource type="Texture2D" uid="uid://b7riib1ok6xnc" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="3_f6101"]
-[ext_resource type="Texture2D" uid="uid://d326mp7nk325h" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="4_p0erc"]
-[ext_resource type="Texture2D" uid="uid://02g2gnq0hdy5" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="5_fjpbu"]
-[ext_resource type="Texture2D" uid="uid://cchxkm222au23" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="6_eirps"]
-[ext_resource type="Texture2D" uid="uid://cjx11kbcu44xo" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="7_fh4u1"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Buildings.png" id="2_sge75"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Hive.png" id="3_f6101"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Interior-01.png" id="4_p0erc"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Props-Rocks.png" id="5_fjpbu"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="6_eirps"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tree-Assets.png" id="7_fh4u1"]
 [ext_resource type="PackedScene" uid="uid://cm3ur0fdve6pq" path="res://player.tscn" id="8_pssr7"]
-[ext_resource type="Texture2D" uid="uid://btdo13g80aw0e" path="res://Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="9_g5nkj"]
-[ext_resource type="Texture2D" uid="uid://b4lwaq3kldcey" path="res://Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="10_5hagy"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Background/Background.png" id="9_g5nkj"]
+[ext_resource type="Texture2D" path="res://Legacy-Fantasy - High Forest 2.3/Trees/Background.png" id="10_5hagy"]
 [ext_resource type="PackedScene" uid="uid://cwys6w505bpkt" path="res://objects/mine_gate.tscn" id="10_7d1fb"]
 [ext_resource type="Script" path="res://classes/EntrtPoint.gd" id="11_730ax"]
 [ext_resource type="PackedScene" uid="uid://d0mr4uk6ymxk2" path="res://enemies/boar.tscn" id="11_yab16"]
+[ext_resource type="PackedScene" uid="uid://bd2tf4divqbwr" path="res://objects/save_stone.tscn" id="14_0q33l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a13bx"]
 texture = ExtResource("2_sge75")
@@ -307,6 +308,9 @@ script = ExtResource("11_730ax")
 position = Vector2(640, 176)
 script = ExtResource("11_730ax")
 direction = -1
+
+[node name="SaveStone" parent="TileMap" instance=ExtResource("14_0q33l")]
+position = Vector2(296, 17)
 
 [node name="Player" parent="." instance=ExtResource("8_pssr7")]
 position = Vector2(64, 192)

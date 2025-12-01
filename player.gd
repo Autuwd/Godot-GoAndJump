@@ -97,7 +97,7 @@ func tick_physics(state: State, delta: float) -> void:
 	interaction_icon.visible = not interacting_with.is_empty()
 	
 	if invincible_timer.time_left > 0:
-		graphics.modulate.a = sin(Time.get_ticks_msec() / 10) * 0.5 + 0.5
+		graphics.modulate.a = sin(Time.get_ticks_msec() / 10.0) * 0.5 + 0.5
 	else :
 		graphics.modulate.a = 1
 	
