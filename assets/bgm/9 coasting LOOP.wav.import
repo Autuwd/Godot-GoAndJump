@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cddlw8v6p2evi"
+path="res://.godot/imported/9 coasting LOOP.wav-e72880da510c0b1e9542d7e14d1b3912.sample"
+
+[deps]
+
+source_file="res://assets/bgm/9 coasting LOOP.wav"
+dest_files=["res://.godot/imported/9 coasting LOOP.wav-e72880da510c0b1e9542d7e14d1b3912.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bbb6l02rano7r"
+path="res://.godot/imported/4 town LOOP.wav-8be2070ad96d21262499451d25ac46b9.sample"
+
+[deps]
+
+source_file="res://assets/bgm/4 town LOOP.wav"
+dest_files=["res://.godot/imported/4 town LOOP.wav-8be2070ad96d21262499451d25ac46b9.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

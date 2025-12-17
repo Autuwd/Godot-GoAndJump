@@ -68,6 +68,10 @@ var interacting_with: Array[Interactable]
 @onready var invincible_timer: Timer = $InvincibleTimer
 @onready var slide_request_timer: Timer = $SlideRequestTimer
 @onready var interaction_icon: AnimatedSprite2D = $InteractionIcon
+@onready var game_over_screen: Control = $CanvasLayer/GameOverScreen
+@onready var pause_screen: Control = $CanvasLayer/PauseScreen
+
+
 
 
 func _ready() -> void:
@@ -91,6 +95,9 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("interact") and interacting_with:
 		interacting_with.back().interact()
+	
+	if event.is_action_pressed("pause"):
+		pause_screen.show_pause()
 
 
 func tick_physics(state: State, delta: float) -> void:
@@ -170,7 +177,7 @@ func slide(delta: float) -> void:
 	move_and_slide()
 
 func die() -> void:
-	get_tree().reload_current_scene()
+	game_over_screen.show_game_over()
 
 func register_interactable(v: Interactable) -> void:
 	if v in interacting_with:
@@ -312,6 +319,7 @@ func transition_state(from: State, to: State) -> void:
 			velocity.y = JUMP_VELOCITY
 			coyote_timer.stop()
 			jump_request_timer.stop()
+			SoundManager.play_sfx("Jump")
 		
 		State.FALL:
 			animation_player.play("fall")
@@ -330,18 +338,22 @@ func transition_state(from: State, to: State) -> void:
 			velocity = WALL_JUMP_VELOCITY
 			velocity.x *= get_wall_normal().x
 			jump_request_timer.stop()
+			SoundManager.play_sfx("Jump")
 			
 		State.ATTACK_1:
 			animation_player.play("attack_1")
 			is_combo_requested = false
+			SoundManager.play_sfx("Attack1")
 			
 		State.ATTACK_2:
 			animation_player.play("attack_2")
 			is_combo_requested = false
+			SoundManager.play_sfx("Attack2")
 			
 		State.ATTACK_3:
 			animation_player.play("attack_3")
 			is_combo_requested = false
+			SoundManager.play_sfx("Attack3")
 		
 		State.HURT:
 			animation_player.play("hurt")

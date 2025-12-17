@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bj7uqtab25xcw"]
+
+[ext_resource type="AudioStream" uid="uid://dsav0bmxm740q" path="res://assets/jumppp11.ogg" id="1_il5ka"]
+[ext_resource type="Script" path="res://globals/sound_manager.gd" id="1_yakyg"]
+[ext_resource type="AudioStream" uid="uid://28aqjsgvqlpm" path="res://assets/animal melee sound.wav" id="2_j38ve"]
+[ext_resource type="AudioStream" uid="uid://dt1xss3ob3cxg" path="res://assets/melee sound.wav" id="3_lw78w"]
+[ext_resource type="AudioStream" uid="uid://dm4qrq7e8onl4" path="res://assets/sword sound.wav" id="4_rooqs"]
+[ext_resource type="AudioStream" uid="uid://elgc0vah8pde" path="res://assets/MENU B_Select.wav" id="6_dm2y8"]
+[ext_resource type="AudioStream" uid="uid://bksr3vaapiw2u" path="res://assets/MENU_Pick.wav" id="7_fnmul"]
+
+[node name="SoundManager" type="Node"]
+process_mode = 3
+script = ExtResource("1_yakyg")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("1_il5ka")
+volume_db = 0.936
+bus = &"SFX"
+
+[node name="Attack1" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("2_j38ve")
+volume_db = 0.936
+bus = &"SFX"
+
+[node name="Attack2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("3_lw78w")
+volume_db = 0.936
+bus = &"SFX"
+
+[node name="Attack3" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("4_rooqs")
+volume_db = 0.936
+bus = &"SFX"
+
+[node name="UIPress" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_dm2y8")
+bus = &"SFX"
+
+[node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_fnmul")
+bus = &"SFX"
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"

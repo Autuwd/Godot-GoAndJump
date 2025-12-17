@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bo6h2sitp2pph"]
+[gd_scene load_steps=12 format=3 uid="uid://bo6h2sitp2pph"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_va0ss"]
+[ext_resource type="AudioStream" uid="uid://bg21skhqmiok3" path="res://assets/bgm/1 titles LOOP.wav" id="2_ox0cd"]
 [ext_resource type="TileSet" uid="uid://bj6473sigg4nb" path="res://world.tres" id="5_87n0k"]
 [ext_resource type="Texture2D" uid="uid://cchxkm222au23" path="res://Legacy-Fantasy - High Forest 2.3/Assets/Tiles.png" id="6_eirps"]
 [ext_resource type="PackedScene" uid="uid://cm3ur0fdve6pq" path="res://player.tscn" id="8_pssr7"]
@@ -13,6 +14,7 @@
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_va0ss")
+bgm = ExtResource("2_ox0cd")
 
 [node name="Decorations" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
@@ -201,3 +203,5 @@ editor_draw_drag_margin = true
 
 [node name="Boar" parent="." instance=ExtResource("11_yab16")]
 position = Vector2(200, 192)
+
+[connection signal="died" from="Boar" to="." method="_on_boar_died"]

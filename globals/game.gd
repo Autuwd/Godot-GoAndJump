@@ -1,6 +1,7 @@
 extends Node
 
 const SAVE_PATH := "user://data.sav"
+const CONFIG_PATH := "user://config.ini"
 
 ##场景名称 => {
 #	enumies_alive => [敌人的路径]
@@ -14,15 +15,19 @@ var world_states := {}
 
 func _ready() -> void:
 	color_rect.color.a = 0
+	load_config()
 
 
 func change_scene(path: String, params := {}) -> void:
+	
+	var duration := params.get("duration", 0.6) as float
+	
 	var tree := get_tree()
 	tree.paused = true
 	
 	var tween := create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	tween.tween_property(color_rect, "color:a", 1, 0.6)
+	tween.tween_property(color_rect, "color:a", 1, duration)
 	await tween.finished
 	
 	if tree.current_scene is World:
@@ -53,7 +58,8 @@ func change_scene(path: String, params := {}) -> void:
 	tree.paused = false
 	
 	tween = create_tween()
-	tween.tween_property(color_rect, "color:a", 0, 0.6)
+	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
+	tween.tween_property(color_rect, "color:a", 0, duration)
 
 
 func save_game() -> void:
@@ -103,14 +109,45 @@ func load_game() -> void:
 
 func new_game() -> void:
 	change_scene("res://world.tscn", {
+		duration=1,
 		init=func ():
 			world_states = {}
 			player_stats.from_dict(default_player_stats)
 	})
 
 func back_to_title() -> void:
-	change_scene("res://ui/title_screen.tscn")
+	change_scene("res://ui/title_screen.tscn",{
+		duration=1,
+	})
 
 
 func has_save() -> bool:
 	return FileAccess.file_exists(SAVE_PATH)
+
+
+func save_config() -> void:
+	var config := ConfigFile.new()
+	
+	config.set_value("audio", "master", SoundManager.get_volume(SoundManager.Bus.MASTER))
+	config.set_value("audio", "sfx", SoundManager.get_volume(SoundManager.Bus.SFX))
+	config.set_value("audio", "bgm", SoundManager.get_volume(SoundManager.Bus.BGM))
+
+func load_config() -> void:
+	var config := ConfigFile.new()
+	config.load(CONFIG_PATH)
+	
+	SoundManager.set_volume(
+		SoundManager.Bus.MASTER,
+		config.get_value("audio", "master", 0.5)
+	)
+	
+	SoundManager.set_volume(
+		SoundManager.Bus.SFX,
+		config.get_value("audio", "sfx", 1.0)
+	)
+	
+	SoundManager.set_volume(
+		SoundManager.Bus.BGM,
+		config.get_value("audio", "bgm", 1.0)
+	)
+	

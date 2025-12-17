@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cedmolkm3vf62"
+path="res://.godot/imported/8 victory LOOP.wav-7358f32e11e1b0cdf3f50d34621d8e86.sample"
+
+[deps]
+
+source_file="res://assets/bgm/8 victory LOOP.wav"
+dest_files=["res://.godot/imported/8 victory LOOP.wav-7358f32e11e1b0cdf3f50d34621d8e86.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
