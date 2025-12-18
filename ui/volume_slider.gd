@@ -13,4 +13,3 @@ func _ready() -> void:
 		Game.save_config()
 	)
 	
-	#SoundManager.play_bgm(preload("res://assets/bgm/8 victory LOOP.wav"))

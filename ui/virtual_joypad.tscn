@@ -58,11 +58,31 @@ texture_normal = SubResource("AtlasTexture_n1kxi")
 action = "slide"
 visibility_mode = 1
 
+[node name="Label" type="Label" parent="Actions/TouchScreenButton"]
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 26.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 11
+text = "slide"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Actions"]
 position = Vector2(-29, -12)
 texture_normal = SubResource("AtlasTexture_38uda")
 action = "attack"
 visibility_mode = 1
+
+[node name="Label" type="Label" parent="Actions/TouchScreenButton2"]
+offset_left = 3.0
+offset_top = 4.0
+offset_right = 21.0
+offset_bottom = 20.0
+theme_override_font_sizes/font_size = 11
+text = "atk"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TouchScreenButton3" type="TouchScreenButton" parent="Actions"]
 position = Vector2(-12, 5)
@@ -70,11 +90,30 @@ texture_normal = SubResource("AtlasTexture_55jr1")
 action = "jump"
 visibility_mode = 1
 
+[node name="Label" type="Label" parent="Actions/TouchScreenButton3"]
+offset_left = -1.0
+offset_top = 3.0
+offset_right = 27.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 11
+text = "jump"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TouchScreenButton4" type="TouchScreenButton" parent="Actions"]
 position = Vector2(-12, -28)
 texture_normal = SubResource("AtlasTexture_q5bye")
 action = "interact"
 visibility_mode = 1
+
+[node name="Label" type="Label" parent="Actions/TouchScreenButton4"]
+offset_left = -9.0
+offset_right = 33.0
+offset_bottom = 22.0
+theme_override_font_sizes/font_size = 11
+text = "interact"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Stick" type="Control" parent="."]
 layout_mode = 1
