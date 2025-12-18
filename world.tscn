@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bo6h2sitp2pph"]
+[gd_scene load_steps=13 format=3 uid="uid://bo6h2sitp2pph"]
 
 [ext_resource type="Script" path="res://world.gd" id="1_va0ss"]
 [ext_resource type="AudioStream" uid="uid://bg21skhqmiok3" path="res://assets/bgm/1 titles LOOP.wav" id="2_ox0cd"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cwys6w505bpkt" path="res://objects/mine_gate.tscn" id="10_7d1fb"]
 [ext_resource type="Script" path="res://classes/EntrtPoint.gd" id="11_730ax"]
 [ext_resource type="PackedScene" uid="uid://d0mr4uk6ymxk2" path="res://enemies/boar.tscn" id="11_yab16"]
+[ext_resource type="Script" path="res://classes/ShakyCamera.gd" id="11_yik7k"]
 [ext_resource type="PackedScene" uid="uid://bd2tf4divqbwr" path="res://objects/save_stone.tscn" id="14_0q33l"]
 
 [node name="World" type="Node2D"]
@@ -194,12 +195,14 @@ position = Vector2(64, 192)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -15)
+process_callback = 0
 limit_smoothed = true
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
+script = ExtResource("11_yik7k")
 
 [node name="Boar" parent="." instance=ExtResource("11_yab16")]
 position = Vector2(200, 192)
