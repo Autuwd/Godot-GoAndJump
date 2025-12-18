@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bj7uqtab25xcw"]
+[gd_scene load_steps=9 format=3 uid="uid://bj7uqtab25xcw"]
 
 [ext_resource type="AudioStream" uid="uid://dsav0bmxm740q" path="res://assets/jumppp11.ogg" id="1_il5ka"]
 [ext_resource type="Script" path="res://globals/sound_manager.gd" id="1_yakyg"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://dm4qrq7e8onl4" path="res://assets/sword sound.wav" id="4_rooqs"]
 [ext_resource type="AudioStream" uid="uid://elgc0vah8pde" path="res://assets/MENU B_Select.wav" id="6_dm2y8"]
 [ext_resource type="AudioStream" uid="uid://bksr3vaapiw2u" path="res://assets/MENU_Pick.wav" id="7_fnmul"]
+[ext_resource type="AudioStream" uid="uid://b40dncq2oa21s" path="res://assets/slide.wav" id="8_5jbhe"]
 
 [node name="SoundManager" type="Node"]
 process_mode = 3
@@ -40,6 +41,10 @@ bus = &"SFX"
 
 [node name="UIFocus" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("7_fnmul")
+bus = &"SFX"
+
+[node name="Slide" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_5jbhe")
 bus = &"SFX"
 
 [node name="BGMPlayer" type="AudioStreamPlayer" parent="."]

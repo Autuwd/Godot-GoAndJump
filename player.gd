@@ -377,12 +377,15 @@ func transition_state(from: State, to: State) -> void:
 			animation_player.play("sliding_start")
 			slide_request_timer.stop()
 			stats.energy -= SLIDING_ENERGY
+			SoundManager.play_sfx("Slide")
 		
 		State.SLIDING_LOOP:
 			animation_player.play("sliding_loop")
+
 		
 		State.SLIDING_END:
 			animation_player.play("sliding_end")
+
 	
 	is_first_tick = true
 
